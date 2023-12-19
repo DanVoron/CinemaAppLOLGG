@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BBBF9117-3FE0-46C0-8415-AE572E680523}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CinemaAppLOLGG</RootNamespace>
+    <AssemblyName>CinemaAppLOLGG</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\Connect.cs" />
+    <Compile Include="DB\CinemaDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CinemaDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\CinemaDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CinemaDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\CinemaDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CinemaDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Film.cs">
+      <DependentUpon>CinemaDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Mesta.cs">
+      <DependentUpon>CinemaDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Seans.cs">
+      <DependentUpon>CinemaDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\sysdiagrams.cs">
+      <DependentUpon>CinemaDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Ticket.cs">
+      <DependentUpon>CinemaDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\User.cs">
+      <DependentUpon>CinemaDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Zali.cs">
+      <DependentUpon>CinemaDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LoginPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginPage.Designer.cs">
+      <DependentUpon>LoginPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FormStart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\FormStart.Designer.cs">
+      <DependentUpon>FormStart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UserControlAddFilms.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\UserControlAddFilms.Designer.cs">
+      <DependentUpon>UserControlAddFilms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UserControlBronAdd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\UserControlBronAdd.Designer.cs">
+      <DependentUpon>UserControlBronAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UserControlBronEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\UserControlBronEdit.Designer.cs">
+      <DependentUpon>UserControlBronEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UserControlEditFilm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\UserControlEditFilm.Designer.cs">
+      <DependentUpon>UserControlEditFilm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UserControlSeans.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\UserControlSeans.Designer.cs">
+      <DependentUpon>UserControlSeans.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UserControlWatchBron.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\UserControlWatchBron.Designer.cs">
+      <DependentUpon>UserControlWatchBron.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UserControlWatchFilms.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Pages\UserControlWatchFilms.Designer.cs">
+      <DependentUpon>UserControlWatchFilms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="LoginPage.resx">
+      <DependentUpon>LoginPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\FormStart.resx">
+      <DependentUpon>FormStart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\UserControlAddFilms.resx">
+      <DependentUpon>UserControlAddFilms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\UserControlBronAdd.resx">
+      <DependentUpon>UserControlBronAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\UserControlBronEdit.resx">
+      <DependentUpon>UserControlBronEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\UserControlEditFilm.resx">
+      <DependentUpon>UserControlEditFilm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\UserControlSeans.resx">
+      <DependentUpon>UserControlSeans.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\UserControlWatchBron.resx">
+      <DependentUpon>UserControlWatchBron.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\UserControlWatchFilms.resx">
+      <DependentUpon>UserControlWatchFilms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EntityDeploy Include="DB\CinemaDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CinemaDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DB\CinemaDB.edmx.diagram">
+      <DependentUpon>CinemaDB.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DB\CinemaDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CinemaDB.Context.cs</LastGenOutput>
+      <DependentUpon>CinemaDB.edmx</DependentUpon>
+    </Content>
+    <Content Include="DB\CinemaDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CinemaDB.edmx</DependentUpon>
+      <LastGenOutput>CinemaDB.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\123213.png" />
+    <None Include="Resources\material-symbols_minimize.png" />
+    <None Include="Resources\Vector.png" />
+    <None Include="Resources\cinema.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
